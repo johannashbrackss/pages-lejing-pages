@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐竞体育 – 持续关注 再次访问</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f6fb;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* ──── Hero ──── */
+        .hero {
+            background: linear-gradient(145deg, #0b1120 0%, #1a263b 100%);
+            color: #e9edf5;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(56, 189, 248, 0.04);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 span {
+            font-weight: 300;
+            color: #94a3b8;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 680px;
+            margin: 0 auto 20px;
+            color: #cbd5e1;
+            position: relative;
+            z-index: 1;
+        }
+        .hero .badge {
+            display: inline-block;
+            border: 1px solid #3b82f6;
+            color: #93c5fd;
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        /* ──── 通用区域 ──── */
+        section {
+            padding: 56px 0;
+        }
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+        }
+        .section-title small {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-left: 10px;
+        }
+
+        /* ──── 优势卡片 ──── */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+        .adv-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.2s;
+        }
+        .adv-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+        }
+        .adv-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+        .adv-card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .adv-card .icon-emoji {
+            font-size: 1.8rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* ──── 说明区域 ──── */
+        .explain-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .explain-block {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 28px;
+            border: 1px solid #e9edf2;
+        }
+        .explain-block h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+        .explain-block p {
+            color: #334155;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .explain-block ul {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .explain-block li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 18px;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        .explain-block li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+        }
+
+        /* ──── FAQ 摘要 ──── */
+        .faq-summary {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #dce1e8;
+            padding-bottom: 16px;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #0f172a;
+        }
+        .faq-item p {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        /* ──── 底部 ──── */
+        .footer-links {
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 32px 0;
+            text-align: center;
+        }
+        .footer-links p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .footer-links a:hover {
+            border-bottom-color: #2563eb;
+        }
+
+        /* ──── 响应式 ──── */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 2rem; }
+            .explain-grid { grid-template-columns: 1fr; }
+            .faq-summary { grid-template-columns: 1fr; }
+            .container { padding: 0 18px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.7rem; }
+            .section-title { font-size: 1.35rem; }
+            .advantages { grid-template-columns: 1fr; }
+        }
+
+        /* ──── 强调色链接（正文内） ──── */
+        .content-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.25);
+        }
+        .content-link:hover {
+            border-bottom-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="container">
+        <div class="badge">再次访问 · 持续关注</div>
+        <h1>乐竞体育 <span>· 习惯性回访</span></h1>
+        <p>收藏、记住、重新打开 —— 一个值得长期留存的体育信息站点。界面简洁，内容聚焦，适合反复阅读与跟踪。</p>
+    </div>
+</div>
+
+<!-- 优势区 -->
+<section>
+    <div class="container">
+        <h2 class="section-title">为什么值得再次打开 <small>优势与习惯</small></h2>
+        <div class="advantages">
+            <div class="adv-card">
+                <div class="icon-emoji">📌</div>
+                <h3>稳定更新节奏</h3>
+                <p>内容保持定期刷新，每次回访都能发现新的信息片段，避免枯燥重复。</p>
+            </div>
+            <div class="adv-card">
+                <div class="icon-emoji">🧭</div>
+                <h3>低干扰阅读</h3>
+                <p>无弹窗、无强推送，页面结构克制，让注意力停留在有效信息上。</p>
+            </div>
+            <div class="adv-card">
+                <div class="icon-emoji">🔖</div>
+                <h3>收藏友好</h3>
+                <p>直接收藏至浏览器书签或保存至笔记工具，再次访问时路径清晰、加载快速。</p>
+            </div>
+            <div class="adv-card">
+                <div class="icon-emoji">🔄</div>
+                <h3>持续可访问</h3>
+                <p>基于静态页面的部署方式，长期保持在线，减少因后台变动导致的访问中断。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 说明区 -->
+<section style="background:#ffffff; border-top:1px solid #e9edf2; border-bottom:1px solid #e9edf2;">
+    <div class="container">
+        <h2 class="section-title">再次访问的场景与方式</h2>
+        <div class="explain-grid">
+            <div class="explain-block">
+                <h3>日常回访节奏</h3>
+                <p>不必每天登录，但可以每隔几天或一周打开一次。适合在碎片时间里快速浏览更新内容，无需注册或订阅。</p>
+                <ul>
+                    <li>通过浏览器历史记录或书签直接进入</li>
+                    <li>在笔记或文档中保留链接，方便多设备同步</li>
+                    <li>配合浏览器的「固定标签页」功能长期保留</li>
+                </ul>
+            </div>
+            <div class="explain-block">
+                <h3>关注点的自然转移</h3>
+                <p>当你在不同阶段对体育信息产生兴趣时，可以随时回到这个页面。不需要重新搜索或认证，降低再次访问的心理门槛。</p>
+                <ul>
+                    <li>保持页面结构的延续性，不会每次大变</li>
+                    <li>核心信息模块固定，便于肌肉记忆</li>
+                    <li>减少决策负担 —— 打开即可浏览</li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin-top:28px; color:#475569; font-size:0.95rem; background:#f1f5f9; padding:16px 20px; border-radius:12px;">
+            💡 建议将 <a href="https://pages-lejing.com" class="content-link">乐竞体育</a> 加入浏览器书签栏或手机主屏幕，下次访问无需输入网址，一步直达。
+        </p>
+    </div>
+</section>
+
+<!-- FAQ 摘要 -->
+<section>
+    <div class="container">
+        <h2 class="section-title">常见关注点 <small>FAQ 摘要</small></h2>
+        <div class="faq-summary">
+            <div class="faq-item">
+                <strong>页面内容会经常变化吗？</strong>
+                <p>内容会定期调整与补充，但不会频繁到让人困惑。核心结构保持相对稳定，适合习惯性访问。</p>
+            </div>
+            <div class="faq-item">
+                <strong>是否需要注册或登录？</strong>
+                <p>不需要。整个页面公开可读，无需任何账户即可浏览全部内容。收藏即用。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动端访问体验如何？</strong>
+                <p>页面采用响应式设计，在手机、平板和电脑上均可获得一致的阅读体验。支持手势缩放。</p>
+            </div>
+            <div class="faq-item">
+                <strong>如何确认是最新版本？</strong>
+                <p>每次访问时刷新页面即可看到最新内容。由于是静态部署，版本更新后无需手动操作。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 底部链接 -->
+<div class="footer-links">
+    <div class="container">
+        <p>如果你希望持续关注这个站点，请记住 <a href="https://pages-lejing.com">乐竞体育</a> —— 一个可以反复打开的页面。</p>
+        <p style="margin-top:12px; font-size:0.8rem; color:#94a3b8;">© 2025 · 仅作为信息展示，无诱导行为</p>
+    </div>
+</div>
+
+</body>
+</html>
