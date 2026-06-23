@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 - 快速了解平台用途与核心服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', sans-serif;
+            background: #f5f6fa;
+            color: #1e2a41;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== 深色 hero 区 ===== */
+        .hero {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            padding: 3.5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: #f5f6fa;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: #f8fafc;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #94a3b8, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 680px;
+            margin: 1.2rem auto 0;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            color: #b9c8e0;
+            margin-top: 1.8rem;
+        }
+
+        /* ===== 浅色正文区容器 ===== */
+        .main-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3.5rem;
+        }
+
+        /* ===== 优势区（卡片） ===== */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-top: -1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-card {
+            background: #ffffff;
+            padding: 1.8rem 1.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(203, 213, 225, 0.25);
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.08);
+            border-color: #94a3b8;
+        }
+
+        .highlight-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .highlight-card p {
+            font-size: 0.95rem;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* ===== 说明区（内容区） ===== */
+        .explain-section {
+            margin: 3.5rem 0 2.8rem;
+            background: #ffffff;
+            padding: 2.2rem 2rem;
+            border-radius: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf2;
+        }
+
+        .explain-section h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+        }
+
+        .explain-section h2 small {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-left: 0.6rem;
+        }
+
+        .explain-section p {
+            margin-bottom: 1.2rem;
+            color: #1e293b;
+        }
+
+        .explain-section p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .explain-section a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .explain-section a:hover {
+            color: #1e3a8a;
+            border-bottom-color: #1e3a8a;
+        }
+
+        .insight-box {
+            background: #f1f4f9;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            margin: 1.6rem 0 1rem;
+            border-left: 4px solid #475569;
+        }
+
+        .insight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #1e293b;
+        }
+
+        /* ===== FAQ 摘要区 ===== */
+        .faq-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2.8rem 0 3rem;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            padding: 1.5rem 1.4rem 1.6rem;
+            border-radius: 18px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf2;
+            transition: border 0.2s;
+        }
+
+        .faq-item:hover {
+            border-color: #94a3b8a0;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #0f172a;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .faq-item .q::before {
+            content: "▸";
+            color: #475569;
+            font-weight: 400;
+        }
+
+        .faq-item .a {
+            font-size: 0.9rem;
+            color: #334155;
+            padding-left: 1.4rem;
+            line-height: 1.5;
+        }
+
+        .faq-item .a a {
+            color: #1e40af;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .faq-item .a a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== 底部链接区 ===== */
+        .bottom-links {
+            border-top: 1px solid #dce1e9;
+            padding-top: 2.2rem;
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem 1.5rem;
+        }
+
+        .bottom-links .info-text {
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .bottom-links .info-text a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .bottom-links .info-text a:hover {
+            text-decoration: underline;
+        }
+
+        .bottom-links .meta {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* ===== 响应式细节 ===== */
+        @media (max-width: 680px) {
+            .hero {
+                padding: 2.5rem 1.2rem 3.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .explain-section {
+                padding: 1.6rem 1.2rem;
+            }
+            .explain-section h2 {
+                font-size: 1.4rem;
+            }
+            .highlight-card {
+                padding: 1.4rem 1.2rem;
+            }
+            .faq-item {
+                padding: 1.2rem 1rem;
+            }
+            .bottom-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+            .faq-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HERO ==================== -->
+    <header class="hero">
+        <h1><span>MK体育</span> · 从用途出发</h1>
+        <p>
+            用户想快速识别一个网站能做什么，最直接的方式就是看它的服务定位。<br>
+            MK体育 聚合了赛事浏览、数据查询与内容参考，帮助访客建立立体的认知框架。
+        </p>
+        <div class="badge">体育资讯 · 赛事参考 · 信息聚合</div>
+    </header>
+
+    <!-- ==================== 主内容区 ==================== -->
+    <div class="main-content">
+
+        <!-- 优势卡片区 -->
+        <section class="highlights">
+            <div class="highlight-card">
+                <div class="icon">📋</div>
+                <h3>信息结构化</h3>
+                <p>赛事、队伍、历史数据按逻辑分类呈现，减少检索成本，便于横向对比与决策参考。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">⚡</div>
+                <h3>更新节奏稳定</h3>
+                <p>内容随赛事进程调整，保持时效性，让访问者获得与当下关联度较高的信息。</p>
+            </div>
+            <div class="highlight-card">
+                <div class="icon">🔍</div>
+                <h3>低认知负担</h3>
+                <p>界面布局遵循阅读习惯，重点内容优先展示，不堆叠冗余元素，聚焦核心用途。</p>
+            </div>
+        </section>
+
+        <!-- 说明区：深入解读用途 -->
+        <section class="explain-section">
+            <h2>从「这是什么网站」到「我能用它做什么」<small>—— 一个知识型视角</small></h2>
+            <p>
+                当用户打开一个陌生站点，第一个问题通常是：<strong>这个网站是做什么的？</strong> 
+                对于 <a href="https://app-m-mksports.com">MK体育</a> 而言，它的定位并不复杂：围绕体育赛事提供结构化的信息参考。
+                无论是查看联赛数据、了解队伍近况，还是浏览相关新闻摘要，站点都尝试以较低的信息密度呈现内容。
+            </p>
+            <p>
+                从设计上看，<a href="https://app-m-mksports.com">MK体育</a> 更倾向于“信息工具”而非“资讯瀑布”。
+                它把不同维度的体育数据拆解成独立模块，让用户可以根据自己的兴趣点直接切入。 
+                比如，某位用户只想快速确认某支球队的近期战绩，无需在长篇报道中翻找——这体现了站点对“效率”的侧重。
+            </p>
+            <div class="insight-box">
+                <p>💡 一个小提示：当你希望快速了解某一项赛事的结构或队伍背景时，<a href="https://app-m-mksports.com">MK体育</a> 的分类索引可以帮你节省不少时间。信息组织方式偏向实用主义，适合有明确查询目标的访问者。</p>
+            </div>
+            <p>
+                当然，任何信息平台都有其边界。<a href="https://app-m-mksports.com">MK体育</a> 并不试图包揽所有体育内容，而是聚焦于可被结构化呈现的数据与事实。
+                这种克制反而让它的核心用途更加清晰——如果你需要一个轻量级但信息密度合理的体育参考点，它值得花几分钟探索。
+            </p>
+        </section>
+
+        <!-- FAQ 摘要 -->
+        <section class="faq-summary">
+            <div class="faq-item">
+                <div class="q">MK体育 适合哪些人使用？</div>
+                <div class="a">适合希望快速获取赛事结构、队伍数据以及历史参考的体育爱好者、分析型用户或内容研究者。界面不强调社交与互动，偏向信息查阅。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">主要提供哪类信息？</div>
+                <div class="a">赛事日程、联赛排名、队伍基础数据、近期赛果等结构化信息。内容以参考性为主，不包含实时比分直播或博彩导向服务。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">网站内容更新频率如何？</div>
+                <div class="a">根据主流赛事周期进行内容迭代，重点联赛与杯赛阶段更新更密集。非赛季期间保持基础数据可查，信息有效期标注清晰。</div>
+            </div>
+        </section>
+
+        <!-- 底部链接与元信息 -->
+        <footer class="bottom-links">
+            <div class="info-text">
+                <span>想要直接了解？<a href="https://app-m-mksports.com">MK体育</a> 的信息组织方式或许符合你的预期。</span>
+            </div>
+            <div class="meta">
+                <span>© 参考索引 · 用途说明页</span>
+            </div>
+        </footer>
+
+    </div>
+    <!-- main-content end -->
+
+</body>
+</html>
